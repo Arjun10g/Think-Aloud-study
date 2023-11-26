@@ -43,7 +43,7 @@
           <h1>Response Processes in Health Psychology</h1>
         </div>
         <div class="cont">
-          <h1>Response Processes in</h1>
+          <h1>IRT Parameters in Non-cognitive Measures</h1>
         </div>
         <div class="cont">
           <h1>Response Processes</h1>
@@ -400,7 +400,165 @@
           </ol>
 
         </div>
-        <div class="c1">Future Paper 2</div>
+        <div class="c1">
+          <h2 class="heading">The impact of Measurement Models' Influence on Validity Discussions</h2>
+          <ol>
+            <li>Validity discussions in measurement and psychometrics are influenced by the employed measurement models such as classical test theory, item response theory (IRT), factor analysis, or axiomatic scaling theory.</li>
+            <li>Zumbo (2007) and Hubley with Zumbo (2013) emphasize that these measurement models are not neutral in the validation process; they carry their own values and assumptions, shaping discussions of validity.</li>
+          </ol>
+          <h2 class="heading">Understanding IRT and the parameters</h2>
+          <p>tem Response Theory (IRT) is a statistical model used to describe item analysis and item responding. It estimates parameters to describe response patterns: a-parameter (discrimination), b-parameter (threshold value), c-parameter (lower asymptote), and sometimes d-parameter (upper asymptote).</p>
+          <p class="center">IRT Parameters</p>
+          <table border="1">
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>a-parameter</td>
+              <td>Discrimination parameter, indicates how well an item discriminates between individuals with high and low levels of the construct.</td>
+            </tr>
+            <tr>
+              <td>b-parameter</td>
+              <td>Threshold parameter, indicates the level of the construct at which the probability of a positive response is 50%.</td>
+            </tr>
+            <tr>
+              <td>c-parameter</td>
+              <td>Lower asymptote parameter, indicates the probability of a positive response when the level of the construct is low.</td>
+            </tr>
+            <tr>
+              <td>d-parameter</td>
+              <td>Upper asymptote parameter, indicates the probability of a positive response when the level of the construct is high.</td>
+            </tr>
+          </table>
+          <p>IRT's item response function characterizes the interaction between persons and items, representing a psychological response process rather than merely a statistical model.
+            The parameters in IRT, symbolic letters in mathematical terms, carry psychological information about the interaction between the test taker and the item/task, contributing to the validity of the test.</p>
+          <h2 class="heading">IRT Parameters in Practice</h2>
+          <table border="1">
+            <tr>
+                <th>Characteristics</th>
+                <th>Description</th>
+                <th>Relationship with IRT Parameters</th>
+                <th>Findings</th>
+            </tr>
+            <tr>
+                <td>Word/Item Abstractness</td>
+                <td>Level of generality or specificity in item language</td>
+                <td>Correlation with discrimination and difficulty parameters</td>
+                <td>Surprisingly small or non-significant correlations observed, contradicting expectations</td>
+            </tr>
+            <tr>
+                <td>Item Subtlety</td>
+                <td>Indirectness or nuance in item wording</td>
+                <td>Relationship with discrimination and difficulty</td>
+                <td>Inconsistent findings across studies: Some indicate negative correlation, others show no significant link</td>
+            </tr>
+            <tr>
+                <td>Word Frequency</td>
+                <td>Frequency of words used in items</td>
+                <td>Impact on discrimination/difficulty</td>
+                <td>Mixed findings in studies: Some report significant correlations, others find no substantial relationship</td>
+            </tr>
+            <tr>
+                <td>Social Desirability</td>
+                <td>Respondents' tendency to answer favorably</td>
+                <td>Link with lower asymptote (c-parameter)</td>
+                <td>Potential positive relationship observed: More socially desirable items might be endorsed despite low underlying traits</td>
+            </tr>
+        </table>
+        <h2 class="heading">Method Section</h2> 
+        <p>In this study, two participant groups were involved. The first sample, consisting of 729 adults (316 men, 413 women) aged 16 to 94 years (M = 55.1), completed the GDS (Geriatric Depression Scale) to estimate IRT parameters. They had varying education levels (ranging from 2 to 21 years, M = 12.7).</p>
+        <p>A separate community sample of 30 adults (15 men, 15 women) aged 21 to 88 years (M = 42.2) rated the social-cognitive aspects of the GDS items.</p>
+        <p>The Geriatric Depression Scale (GDS) used in the study comprises 30 items designed to assess depressive symptoms in older adults but applicable across various adult age ranges. Respondents answered using a dichotomous format (yes/no), where '1' indicated a more depressed response and '0' a non-depressed one. Total scores ranged from 0 to 30, with higher scores indicating more severe depressive symptoms.</p>
+        <p>Additionally, the 30 individuals in the second sample evaluated each GDS item based on specific social-cognitive aspects, rating the degree of wording specificity, time taken to respond (availability heuristic), comfort level in responding (emotional comfort), clarity of item meaning (meaning clarity), and the perceived social desirability of the response. These aspects were rated on a 7-point scale ranging from -3 to +3. An example item and rating instructions were provided to guide this rating process, as shown in Fig. 5.1.</p>
+
+        <h2 class="heading">Analyses</h2>
+        <table>
+          <tr>
+            <th>Step</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Unidimensionality Assessment</td>
+            <td>Conducted PCA and parallel analysis to check unidimensionality of GDS responses.</td>
+          </tr>
+          <tr>
+            <td>Application of IRT Models</td>
+            <td>Fitted five IRT models (1PL-b, 2PL-a.b, 3PL-a.b.c, 3PL-a.b.d, 4PL-a.b.c.d) to GDS response data.</td>
+          </tr>
+          <tr>
+            <td>Bayesian Estimation</td>
+            <td>Used OpenBUGS for Bayesian estimation of item parameters due to non-normal likelihoods.</td>
+          </tr>
+          <tr>
+            <td>Prior Distributions</td>
+            <td>Set prior distributions for each parameter based on previous specifications.</td>
+          </tr>
+          <tr>
+            <td>Model Comparison</td>
+            <td>Compared models using the Deviance Information Criterion (DIC), selecting 3PL-a.b.d model.</td>
+          </tr>
+          <tr>
+            <td>Item Parameter Estimation</td>
+            <td>Estimated a, b, and d parameters for each of the 30 GDS items using the selected model.</td>
+          </tr>
+          <tr>
+            <td>Social-Cognitive Aspects</td>
+            <td>Obtained descriptive statistics for social-cognitive aspects (wording specificity, availability heuristic, emotional comfort, meaning clarity, and social desirability).</td>
+          </tr>
+          <tr>
+            <td>Regression Analysis</td>
+            <td>Performed multilevel ordinal logistic regression to study associations between item parameters and social-cognitive aspects.</td>
+          </tr>
+          <tr>
+            <td>Outcome</td>
+            <td>Revealed nuanced relationships between GDS item characteristics and social-cognitive aspects, contributing to a deeper understanding of their interplay.</td>
+          </tr>
+        </table>
+        <h2 class="heading">Results</h2>
+        <table>
+          <tr>
+            <th>Social-Cognitive Aspect</th>
+            <th>Relationship with IRT Parameters</th>
+            <th>Effect Size</th>
+            <th>Additional Insights</th>
+          </tr>
+          <tr>
+            <td>Wording Specificity</td>
+            <td>Negatively related to difficulty (b-parameter), positively related to item phrasing</td>
+            <td>Small effect</td>
+            <td>Items reflecting depressed symptoms tended to be more specifically worded</td>
+          </tr>
+          <tr>
+            <td>Availability Heuristic</td>
+            <td>Negatively related to discrimination (a-parameter)</td>
+            <td>Relatively small effect</td>
+            <td>No significant relations with difficulty, upper asymptote, or item phrasing</td>
+          </tr>
+          <tr>
+            <td>Emotional Comfort</td>
+            <td>No significant relationships found</td>
+            <td>N/A</td>
+            <td>No significant associations detected</td>
+          </tr>
+          <tr>
+            <td>Meaning Clarity</td>
+            <td>No significant relationships found</td>
+            <td>N/A</td>
+            <td>No significant associations detected</td>
+          </tr>
+          <tr>
+            <td>Social Desirability</td>
+            <td>Negatively related to discrimination and difficulty, negatively related to item phrasing</td>
+            <td>Small to moderate effects</td>
+            <td>Items reflecting depressed symptoms were rated as less socially desirable to endorse</td>
+          </tr>
+        </table>
+
+
+       
+        </div>
+
         <div class="c1">Future Paper 2</div>
 
 
